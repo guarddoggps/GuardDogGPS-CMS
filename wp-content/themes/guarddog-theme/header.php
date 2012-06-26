@@ -20,10 +20,22 @@
 <body>
 <div id="wrapper" class="hfeed">
     <div id="header">
-        <div id="masthead">         	
-			<div id="logo">
-				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />				
-			</div>			
+        <div id="masthead">
+			<?php
+	            $args = array( 'post_type' => 'header_image');
+	            $header_images = new WP_Query( $args );
+			?>
+			<?php if( $header_images->have_posts() ) { while( $header_images->have_posts() ) { $header_images->the_post(); ?>
+			      <div class="header-image">
+			           <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+			      </div>
+			 <?php } } ?>
+<!--								
+			<div id="logo">				
+			</div>
+			<div id="slogan">								
+			</div>						
+-->
             <div id="branding">
 			   <div id="blog-title">
 					<span>
