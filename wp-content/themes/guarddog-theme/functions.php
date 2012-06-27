@@ -36,7 +36,7 @@ add_theme_support('custom-header', $defaults );
 define('BP_DTHEME_DISABLE_CUSTOM_HEADER', true);
 
 //add support for featured images with post type of header image
-add_theme_support( 'post-thumbnails', array('header_image') ); 
+add_theme_support( 'post-thumbnails', array('header_image','slideshow_image') ); 
 
 add_action( 'init', 'header_image_register' );
 function header_image_register() {
@@ -105,5 +105,15 @@ function header_post_register(){
 	);
 	
 	register_post_type( 'header_post' , $args );	
+}
+
+add_action('init', 'menu_register');
+
+function menu_register() {
+  register_nav_menus(
+    array(
+	      'header-menu' => __( 'Header Menu' )
+	    )
+  );
 }
 ?>
