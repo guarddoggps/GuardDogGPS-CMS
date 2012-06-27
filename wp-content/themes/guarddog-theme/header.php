@@ -26,38 +26,32 @@
 	            $header_images = new WP_Query( $args );
 			?>
 			<?php if( $header_images->have_posts() ) { while( $header_images->have_posts() ) { $header_images->the_post(); ?>
-			      <div class="header-image">
-			           <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+			      <div class="logo">
+			           <?php echo get_the_post_thumbnail( $post->ID, 'large'); ?>
 			      </div>
 			 <?php } } ?>
+			
+			
+			<?php
+	            $args = array( 'post_type' => 'header_post');
+	            $header_posts = new WP_Query( $args );
+			?>
+			<?php
+				$post_args = array( 'post_type' => 'header_post');
+				$header_posts = new WP_Query( $post_args);
+			?>
+			<?php if( $header_posts->have_posts() ) { while( $header_posts->have_posts() ) { $header_posts->the_post(); ?>
+				  <div class="secondaryNav">
+			           <?php echo apply_filters('the_content', $post->post_content); ?>
+			      </div>
+			<?php } } ?>
 <!--								
 			<div id="logo">				
 			</div>
 			<div id="slogan">								
 			</div>						
 -->
-            <div id="branding">
-			   <div id="blog-title">
-					<span>
-						<a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php #bloginfo( 'name' ) ?>
-						</a>
-					</span>
-				</div>
-				<?php if ( is_home() || is_front_page() ) { ?>
-				    <h1 id="blog-description"><?php bloginfo( 'description' ) ?></h1>
-				<?php } else { ?> 
-				    <div id="blog-description"><?php bloginfo( 'description' ) ?></div>
-				<?php } ?>
-			 </div><!-- #branding -->
-             
-            <div id="access">
-				<div class="skip-link">
-					<a href="#content" title="<?php _e( 'Skip to content', 'guarddog-theme' ) ?>"><?php _e( 'Skip to content', 'guarddog-theme' ) ?>
-					</a>
-				</div>
-				<?php wp_page_menu( 'sort_column=menu_order' ); ?>
-            </div><!-- #access -->
-             
+
         </div><!-- #masthead -->   
     </div><!-- #header -->
      

@@ -72,4 +72,38 @@ function header_image_register() {
 	register_post_type( 'header_image' , $args );
 }
 
+
+add_action('init', 'header_post_register');
+
+function header_post_register(){
+	$labels = array(
+		'name' => _x('GuardDog Header Post', 'post type general name'), //this is the (probably plural) name for our new post type
+		'singular_name' => _x('GuardDog Header Post', 'post type singular name'), //how you’d refer to this in the singular (such as ‘Add new ****’)
+		'add_new' => _x('Add New', 'header post'),
+		'add_new_item' => __('Add New Header post'),
+		'edit_item' => __('Edit Header Post'),
+		'new_item' => __('New Header Post'),
+		'view_item' => __('View Header Post'),
+		'search_items' => __('Search Header Post'),
+		'not_found' =>  __('Nothing found'),
+		'not_found_in_trash' => __('Nothing found in Trash'),
+		'parent_item_colon' => ''
+	);
+	
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
+		'menu_icon' => get_stylesheet_directory_uri() . '/article16.png',
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'menu_position' => null,
+		'supports' => array('editor')
+	);
+	
+	register_post_type( 'header_post' , $args );	
+}
 ?>
