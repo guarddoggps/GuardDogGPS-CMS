@@ -116,4 +116,12 @@ function menu_register() {
 	    )
   );
 }
+
+function load_scripts() {
+    wp_enqueue_script('jquery');
+	wp_enqueue_script('cycle',get_template_directory_uri().'/scripts/cycle.js', array('jquery'));
+	wp_enqueue_script('api',get_template_directory_uri().'/scripts/api.js', array('cycle'));
+}
+add_action('wp_enqueue_scripts', 'load_scripts');
+
 ?>
