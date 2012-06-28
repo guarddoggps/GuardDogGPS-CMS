@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="../scripts/api.js"></script>
 </head>
 <body>
-<div id="wrapper" class="hfeed">
+ <div id="container">
     <div id="header">
         <div id="masthead">
 			<?php
@@ -57,4 +57,4 @@
         </div><!-- #masthead -->   
     </div><!-- #header -->
      <?php wp_nav_menu( array( 'theme_location' => 'header-menu') ); ?>
-    <div id="main">
+   

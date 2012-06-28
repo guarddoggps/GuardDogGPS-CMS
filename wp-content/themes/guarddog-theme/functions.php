@@ -107,6 +107,24 @@ function header_post_register(){
 	register_post_type( 'header_post' , $args );	
 }
 
+add_action('init', 'home_page_posts');
+function home_page_posts(){
+	$labels = array(
+		'name' => _x('Home Page Post', 'post type general name'), 
+		'singular_name' => _x('Home Page Post', 'post type singular name'),
+		'add_new' => _x('Add New', 'header post'),
+		'add_new_item' => __('Add New Header post'),
+		'edit_item' => __('Edit Header Post'),
+		'new_item' => __('New Header Post'),
+		'view_item' => __('View Header Post'),
+		'search_items' => __('Search Header Post'),
+		'not_found' =>  __('Nothing found'),
+		'not_found_in_trash' => __('Nothing found in Trash'),
+		'parent_item_colon' => ''
+	);
+}
+
+
 add_action('init', 'menu_register');
 
 function menu_register() {
@@ -117,11 +135,12 @@ function menu_register() {
   );
 }
 
+add_action('wp_enqueue_scripts', 'load_scripts');
 function load_scripts() {
     wp_enqueue_script('jquery');
 	wp_enqueue_script('cycle',get_template_directory_uri().'/scripts/cycle.js', array('jquery'));
 	wp_enqueue_script('api',get_template_directory_uri().'/scripts/api.js', array('cycle'));
 }
-add_action('wp_enqueue_scripts', 'load_scripts');
+
 
 ?>

@@ -4,7 +4,7 @@ Template Name: Home
 */
 ?>
 <?php get_header(); ?>
-<div class="container">
+<div id="widget">
 	<div id="slideshow">	
 	  	<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
@@ -27,6 +27,9 @@ Template Name: Home
 		endwhile; endif; ?>
 	</div>
 </div>
-<table>
-</table>
+<div id="main-content">
+	<?php while (have_posts()) : the_post(); ?>    
+	  <?php the_content(); ?>
+	<?php endwhile; ?>
+</div>
 <?php get_footer(); ?>

@@ -1,4 +1,4 @@
-    </div><!-- #main -->
+    </div><!-- #container -->
      
     <div id="footer">
         <div id="colophon">
