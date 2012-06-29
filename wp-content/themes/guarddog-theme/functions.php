@@ -128,12 +128,12 @@ function home_page_posts(){
 add_action('init', 'menu_register');
 
 function menu_register() {
-  register_nav_menus(
-    array(
-	      'header-menu' => __( 'Header Menu' )
-	    )
-  );
+  	register_nav_menus( array(  
+	    'primary' => __( 'Primary Navigation', 'GuardDog Theme' ),  
+	) );
 }
+
+
 
 add_action('wp_enqueue_scripts', 'load_scripts');
 function load_scripts() {
