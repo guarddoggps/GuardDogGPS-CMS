@@ -125,13 +125,10 @@ function home_page_posts(){
 }
 
 
-add_action('init', 'menu_register');
-
-function menu_register() {
-  	register_nav_menus( array(  
-	    'primary' => __( 'Primary Navigation', 'GuardDog Theme' ),  
-	) );
-}
+//This registers menu! Makes it available in theme!
+register_nav_menus( array(  
+    'primary' => __( 'Primary Navigation', 'GuardDog Theme' )
+) );
 
 
 
