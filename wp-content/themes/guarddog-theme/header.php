@@ -16,8 +16,6 @@
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" title="<?php printf( __( '%s latest posts', 'guarddog-theme' ), wp_specialchars( get_bloginfo('name'), 1 ) ); ?>" />
 	    <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'guarddog-theme' ), wp_specialchars( get_bloginfo('name'), 1 ) ); ?>" />
 	    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<script type="text/javascript" src="../scripts/cycle.js"></script>
-	<script type="text/javascript" src="../scripts/api.js"></script>
 </head>
 <body>
  <div id="container">

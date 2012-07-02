@@ -17,6 +17,8 @@ body {
 	margin-bottom: 0;
 	margin-left: auto;
 	margin-right: auto;
+	overflow: auto; /* handle pages that have floats */
+	padding: 40px;
 }
 
 #widget {
@@ -27,3 +29,62 @@ body {
 #main-content {
 	width: 945px;
 }
+
+.align-widget-left {
+	float: left;
+}
+
+.align-widget-right {
+	float: right;
+}
+
+/* sliding widget */
+
+.sliding-widget {
+	width: 326px;
+}
+
+/* tabs styling */
+
+#tabs ul {
+	list-style-type: none;
+	/* push list items against container*/
+	padding:0;
+	margin:0; 
+}
+
+#tabs li {
+	display: inline;
+	border: solid;
+	border-width: 1px 1px 0 1px; /* no bottom border */
+	margin: 0;
+}
+
+#tabs li a {
+	/* pad the link rather than list so entire area clickable */
+	padding: 0 1em;	
+}
+
+
+#tabs li {
+	/* apply color to list itself, since it is element connected to content div*/
+	background: #E0E0E0;
+	/* remove gap in tabs*/
+	margin-right: -5px;	
+}
+
+#tabs li.active {
+	/* change background of active link to blend into content */
+	background: #fff;
+	/* vertical padding in inline elements doesn't push anything out of way*/
+	padding-bottom: 1px;
+}
+
+
+
+#tabs div {
+	/* border to content area to make it appear part of tabs*/
+	width: 490px;
+	border: 1px solid;
+}
+
