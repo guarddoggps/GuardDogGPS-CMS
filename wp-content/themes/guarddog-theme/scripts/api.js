@@ -15,6 +15,8 @@ jQuery.noConflict();
 		});
 		
 		
+		$('.slideshow-no-fade').cycle({ fx: 'fade', speed: 1});
+		
 		$('#tabs ul li:first').addClass('active');
 		$('#tabs div').hide();			
 		$('#tabs div:first').show();

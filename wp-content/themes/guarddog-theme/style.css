@@ -32,10 +32,12 @@ body {
 
 .align-widget-left {
 	float: left;
+	width: 427px;
 }
 
 .align-widget-right {
 	float: right;
+	width: 427px;	
 }
 
 /* sliding widget */
