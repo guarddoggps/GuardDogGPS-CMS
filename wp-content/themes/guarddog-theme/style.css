@@ -90,3 +90,62 @@ body {
 	border: 1px solid;
 }
 
+#header-contact {
+	position: absolute;
+	top: 0;
+	left: 700px;
+}
+
+img[title=smart-reliable] {
+	position: absolute;
+	top: 50px;
+	left: 700px;
+ }
+
+img[title=guard-dog-logo] {
+	position: absolute;
+	top: 20px;
+	left: 0;
+}
+
+#masthead {
+	height: 150px;
+	position: relative;
+}
+
+#footer-left {
+	width: 200px;
+	float: left;
+}
+
+#footer-left ul {
+	width: 200px;
+}
+
+#footer-left ul li {
+	float: left;
+	width: 100px;
+}
+
+/* break list */
+#footer-left ul br {
+    clear: left;
+}
+
+#footer-middle {
+	width: 545px;
+	float: left;
+}
+
+#footer-middle .external-links-top {
+	text-align: center;
+}
+
+#footer-middle .external-links-bottom {
+	text-align: center;
+}
+
+#footer-right {
+	width: 200px;
+	float: left;
+}

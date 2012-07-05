@@ -1,3 +1,9 @@
+<?php
+global $post;
+$redirect = get_post_meta($post->ID, 'redirect', true);
+if ($redirect)
+        wp_redirect($redirect);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head profile="http://gmpg.org/xfn/11">
@@ -19,40 +25,41 @@
 </head>
 <body>
  <div id="container">
-    <div id="header">
-        <div id="masthead">
-			<?php
-	            $args = array( 'post_type' => 'header_image');
-	            $header_images = new WP_Query( $args );
-			?>
-			<?php if( $header_images->have_posts() ) { while( $header_images->have_posts() ) { $header_images->the_post(); ?>
-			      <div class="logo">
-			           <?php echo get_the_post_thumbnail( $post->ID, 'large'); ?>
-			      </div>
-			 <?php } } ?>
+     <div id="masthead">			
+		<?php
+			global $wpdb;
+		    $header_content = $wpdb->get_row(
+		        $wpdb->prepare(
+		            "SELECT * FROM $wpdb->posts
+		             WHERE post_type = %s
+					 AND post_title = %s
+					 LIMIT 1
+		            ",
+		            'header_post',
+					'Header Content'
+		        )
+		    );
+			echo "<div id='header-contact'>";
+		    echo $header_content->post_content;
+			echo "</div>";
+					
+			$args = array(
+			 'post_type' => 'attachment',
+			 'numberposts' => -1,
+			 'orderby'=> 'ID',
+			 'order' => 'ASC',
+			 'post_mime_type' => 'image',
+			 'post_status' => null,
+			 'post_parent' => $header_content->ID
+			);
 			
-			
-			<?php
-	            $args = array( 'post_type' => 'header_post');
-	            $header_posts = new WP_Query( $args );
-			?>
-			<?php
-				$post_args = array( 'post_type' => 'header_post');
-				$header_posts = new WP_Query( $post_args);
-			?>
-			<?php if( $header_posts->have_posts() ) { while( $header_posts->have_posts() ) { $header_posts->the_post(); ?>
-				  <div class="secondaryNav">
-			           <?php echo apply_filters('the_content', $post->post_content); ?>
-			      </div>
-			<?php } } ?>
-<!--								
-			<div id="logo">				
-			</div>
-			<div id="slogan">								
-			</div>						
--->
-
-        </div><!-- #masthead -->   
-    </div><!-- #header -->
+			$attachments = get_posts($args);			
+			if($attachments){
+				foreach ($attachments as $attachment) {
+				    echo wp_get_attachment_image($attachment->ID, 'full', false, false);
+				}
+			}
+		?>
+     </div><!-- #masthead -->   
      <?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
    
