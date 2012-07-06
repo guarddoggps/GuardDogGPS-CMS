@@ -8,6 +8,8 @@ body {
 	font-size: 0.875em;
 	color: #7F7F7F;
 	line-height: 1.188em;
+	margin: 0;
+	padding: 0;
 }
 
 #container {
@@ -18,16 +20,59 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	overflow: auto; /* handle pages that have floats */
-	padding: 40px;
+ }
+
+#main-content {
+	width: 945px;
 }
+
+/** header **/
+#masthead {
+	height: 185px;
+	position: relative;
+}
+
+#header-contact {
+	position: absolute;
+	top: 5px;
+	left: 725px;
+}
+
+#header-contact a {
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #A7A9AC;
+	font-weight: bold;
+ }
+
+#header-contact p {
+	margin-top: 5px;
+}
+
+img[title=smart-reliable] {
+	position: absolute;
+	top: 50px;
+	left: 725px;
+ }
+
+img[title=guard-dog-logo] {
+	position: absolute;
+	top: 35px;
+	left: 30px;
+}
+
+.SecNavPhone {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #96979B;
+}
+/** **/
 
 #widget {
 	width: 945px;
 	height: 326px;
-}
-
-#main-content {
-	width: 945px;
 }
 
 .align-widget-left {
@@ -90,28 +135,7 @@ body {
 	border: 1px solid;
 }
 
-#header-contact {
-	position: absolute;
-	top: 0;
-	left: 700px;
-}
-
-img[title=smart-reliable] {
-	position: absolute;
-	top: 50px;
-	left: 700px;
- }
-
-img[title=guard-dog-logo] {
-	position: absolute;
-	top: 20px;
-	left: 0;
-}
-
-#masthead {
-	height: 150px;
-	position: relative;
-}
+/* footer */
 
 #footer-left {
 	width: 200px;
@@ -153,8 +177,8 @@ img[title=guard-dog-logo] {
 /* navigation menu container */
 .menu-primary-container {
 	width: 100%;
-	height: 40px;
-	background-color: #F60;
+	height: 35px;
+	background: #FF7716 url(../guarddog-theme/images/mainbk.png) repeat 0 200px;
 }
 
 .menu-primary-container ul {
@@ -164,10 +188,10 @@ img[title=guard-dog-logo] {
 
 .menu-primary-container ul li {
 	display: inline; 
-	height: 30px; 
+	height: 35px; 
 	float: left; 
 	list-style: none;
-	margin-left: 15px;
+	border-right: 1px solid #FF7716;
 	/* position submenu relative to main menu */
 	position:relative;
 }
@@ -175,6 +199,11 @@ img[title=guard-dog-logo] {
 .menu-primary-container ul li a {
 	color: #fff; 
 	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	display: block;
+	width: 97px;
+	padding: 10px;	
 }
 
 .menu-primary-container li ul
@@ -187,7 +216,7 @@ img[title=guard-dog-logo] {
 	position:absolute;
 	/* position relative to parent */
 	left: 0px; 
-	top: 20px;
+	top: 33px;
 	/* in case we have other elements positioned absolutely */
 	z-index: 100;
 	background-color: #F60;
@@ -196,9 +225,9 @@ img[title=guard-dog-logo] {
 .menu-primary-container li:hover ul
 {
 	/* show submenu */
-	display:block;
-	width:160px;
-}
+	display: block;
+	width: 97px;
+ }
 
 .menu-primary-container li li
 {
@@ -209,9 +238,82 @@ img[title=guard-dog-logo] {
 
 .menu-primary-container li li a
 {
-	
+	border: none;
+	background: #fff;
+	text-align: left;
+	color: #000;
+	font-weight: normal;
+	border-top: 1px solid #D9D9D9;
 }
 
 .menu-primary-container li li a.hover
 {
 }
+
+/** home **/
+a.link_logo {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1.25em;
+	color:#a7a9ac;
+	text-decoration:none;
+	padding-left:25px;
+}
+ 
+a.link_logo:hover{
+ 	color:#000000;
+}
+
+#textauto {color: purple;}
+a.link_logo:hover #textauto {color: #000000;}
+
+#textfleet {
+	color: #75A532;
+}
+a.link_logo:hover #textfleet {color: #000000;}
+
+#textmoto {color: #ff6600;}
+a.link_logo:hover #textmoto {color: #000000;}
+
+#textmarine {color: #00aeef;}
+a.link_logo:hover #textmarine {color: #000000;}
+
+#registered {font-size: 12px;}
+
+.featuresboxes {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:0.875em;
+	color:#7f7f7f;
+	line-height:1.438em;
+	vertical-align: top;
+	padding-left: 25px;
+}
+
+.textboxes {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:0.875em;
+	color:#7f7f7f;
+	line-height:1.188em;
+	padding-left: 10px;
+	display: block;
+	padding-top: 0px;
+	padding-right: 20px;
+	text-align: left;
+	padding-bottom: 0px;
+}
+
+.textboxes_orange {
+	color: #F15B28;
+}
+
+.textboxes_purple {
+	color: #800080;
+}
+
+.textboxes_green {
+	color: #75A532;
+}
+
+.textboxes_blue {
+	color: #00AEEF;
+}
+/** **/

@@ -39,26 +39,7 @@ if ($redirect)
 					'Header Content'
 		        )
 		    );
-			echo "<div id='header-contact'>";
-		    echo $header_content->post_content;
-			echo "</div>";
-					
-			$args = array(
-			 'post_type' => 'attachment',
-			 'numberposts' => -1,
-			 'orderby'=> 'ID',
-			 'order' => 'ASC',
-			 'post_mime_type' => 'image',
-			 'post_status' => null,
-			 'post_parent' => $header_content->ID
-			);
-			
-			$attachments = get_posts($args);			
-			if($attachments){
-				foreach ($attachments as $attachment) {
-				    echo wp_get_attachment_image($attachment->ID, 'full', false, false);
-				}
-			}
+		    echo $header_content->post_content; 
 		?>
      </div><!-- #masthead -->   
      <?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
