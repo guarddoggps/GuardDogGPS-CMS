@@ -149,3 +149,69 @@ img[title=guard-dog-logo] {
 	width: 200px;
 	float: left;
 }
+
+/* navigation menu container */
+.menu-primary-container {
+	width: 100%;
+	height: 40px;
+	background-color: #F60;
+}
+
+.menu-primary-container ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu-primary-container ul li {
+	display: inline; 
+	height: 30px; 
+	float: left; 
+	list-style: none;
+	margin-left: 15px;
+	/* position submenu relative to main menu */
+	position:relative;
+}
+
+.menu-primary-container ul li a {
+	color: #fff; 
+	text-decoration: none;
+}
+
+.menu-primary-container li ul
+{
+	margin: 0px;
+	padding: 0px;
+	/* hide submenu */	
+	display :none;
+	/* position submenu relative to main menu */
+	position:absolute;
+	/* position relative to parent */
+	left: 0px; 
+	top: 20px;
+	/* in case we have other elements positioned absolutely */
+	z-index: 100;
+	background-color: #F60;
+}
+
+.menu-primary-container li:hover ul
+{
+	/* show submenu */
+	display:block;
+	width:160px;
+}
+
+.menu-primary-container li li
+{
+	list-style:none;
+	display: list-item;
+	width:100%;
+}
+
+.menu-primary-container li li a
+{
+	
+}
+
+.menu-primary-container li li a.hover
+{
+}
