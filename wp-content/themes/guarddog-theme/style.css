@@ -5,9 +5,9 @@ Theme Name: GuardDog Theme
 body {
 	background-color: #E7E7E7;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 0.875em;
+	font-size: 1em;
+	line-height: 1em;	
 	color: #7F7F7F;
-	line-height: 1.188em;
 	margin: 0;
 	padding: 0;
 }
@@ -35,13 +35,14 @@ body {
 #header-contact {
 	position: absolute;
 	top: 5px;
-	left: 725px;
+	left: 700px;
 }
 
 #header-contact a {
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: .82em;
+	line-height: 1.3;
 	color: #A7A9AC;
 	font-weight: bold;
  }
@@ -53,7 +54,7 @@ body {
 img[title=smart-reliable] {
 	position: absolute;
 	top: 50px;
-	left: 725px;
+	left: 700px;
  }
 
 img[title=guard-dog-logo] {
@@ -137,6 +138,13 @@ img[title=guard-dog-logo] {
 
 /* footer */
 
+#footer {
+	width: 945px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
 #footer-left {
 	width: 200px;
 	float: left;
@@ -201,8 +209,9 @@ img[title=guard-dog-logo] {
 	text-decoration: none;
 	text-align: center;
 	font-weight: bold;
+	font-size: .9em;
 	display: block;
-	width: 97px;
+	width: 95px;
 	padding: 10px;	
 }
 
@@ -251,17 +260,57 @@ img[title=guard-dog-logo] {
 }
 
 /** home **/
+
 a.link_logo {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:1.25em;
 	color:#a7a9ac;
 	text-decoration:none;
 	padding-left:25px;
+	font-weight: bold;
 }
  
-a.link_logo:hover{
+a.link_logo:hover {
  	color:#000000;
 }
+
+#registered {
+	font-size: 12px;
+}
+
+.featuresboxes {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:0.8em;
+	color:#7f7f7f;
+	line-height:1.438em;
+/*	vertical-align: top; */
+	padding-left: 25px;
+}
+
+/* apply border to table cells */
+.autotrac-cell {
+	border-right: 1px solid #dccdcc;
+}
+
+.mototrac-cell {
+	border-right: 1px solid #dccdcc;	
+}
+
+.fleettrac-cell {
+	border-right: 1px solid #dccdcc;
+}
+
+/*
+.marinetrac-cell {
+	border-right: 1px solid #dccdcc;	
+}
+*/
+
+/* clip last image of marinetrac on home page to prevent scrolling by overflow auto */
+#Image13 {
+	width: 230px;
+}
+
 
 #textauto {color: purple;}
 a.link_logo:hover #textauto {color: #000000;}
@@ -277,28 +326,14 @@ a.link_logo:hover #textmoto {color: #000000;}
 #textmarine {color: #00aeef;}
 a.link_logo:hover #textmarine {color: #000000;}
 
-#registered {font-size: 12px;}
-
-.featuresboxes {
+/* span in table cell wrap text*/
+span.textboxes {
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:0.875em;
+    font-size:0.875em;
 	color:#7f7f7f;
-	line-height:1.438em;
-	vertical-align: top;
-	padding-left: 25px;
-}
-
-.textboxes {
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:0.875em;
-	color:#7f7f7f;
+	padding: 0 20px 0 10px;
 	line-height:1.188em;
-	padding-left: 10px;
-	display: block;
-	padding-top: 0px;
-	padding-right: 20px;
-	text-align: left;
-	padding-bottom: 0px;
+	display: block;	
 }
 
 .textboxes_orange {

@@ -1,3 +1,4 @@
+</div><!-- #container -->
     <div id="footer">
 		<?php
 			global $wpdb;
@@ -15,6 +16,5 @@
 		    echo $footer_content->post_content;
 		?>
     </div><!-- #footer -->
-</div><!-- #container -->
 </body>
 </html>
