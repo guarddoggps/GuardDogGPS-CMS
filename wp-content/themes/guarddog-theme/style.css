@@ -19,6 +19,7 @@ body {
 	margin-bottom: 0;
 	margin-left: auto;
 	margin-right: auto;
+	padding-bottom: 30px;
 	overflow: auto; /* handle pages that have floats */
  }
 
@@ -76,14 +77,22 @@ img[title=guard-dog-logo] {
 	height: 326px;
 }
 
+.page-content {
+	width: 100%;
+	padding-top: 30px;	
+}
+
 .align-widget-left {
 	float: left;
-	width: 427px;
+	width: 350px;
+	margin-left: 20px;
 }
 
 .align-widget-right {
 	float: right;
-	width: 427px;	
+	width: 500px; /* wrap image to prevent scrolling */	
+	margin-right: 32px;
+	margin-left: 32px;
 }
 
 /* sliding widget */
@@ -94,34 +103,35 @@ img[title=guard-dog-logo] {
 
 /* tabs styling */
 
-#tabs ul {
+#tabs ul.tab-navigation {
 	list-style-type: none;
 	/* push list items against container*/
 	padding:0;
 	margin:0; 
 }
 
-#tabs li {
-	display: inline;
+#tabs ul.tab-navigation li {
+	float: left;
 	border: solid;
 	border-width: 1px 1px 0 1px; /* no bottom border */
-	margin: 0;
-}
-
-#tabs li a {
-	/* pad the link rather than list so entire area clickable */
-	padding: 0 1em;	
-}
-
-
-#tabs li {
-	/* apply color to list itself, since it is element connected to content div*/
+	margin-bottom: -1px;
+	/* apply color to list itself, since it is element connected to content div*/	
 	background: #E0E0E0;
-	/* remove gap in tabs*/
-	margin-right: -5px;	
+	/* remove gap in tabs*/	
+	margin-right: -1px;	
+	
 }
 
-#tabs li.active {
+#tabs ul.tab-navigation li a {
+	display: block;
+	padding: 10px 15px;
+	/* pad the link rather than list so entire area clickable */
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+ }
+
+#tabs ul.tab-navigation li.active {
 	/* change background of active link to blend into content */
 	background: #fff;
 	/* vertical padding in inline elements doesn't push anything out of way*/
@@ -133,7 +143,22 @@ img[title=guard-dog-logo] {
 #tabs div {
 	/* border to content area to make it appear part of tabs*/
 	width: 490px;
+	padding: 15px;
+	line-height: 1.2;
 	border: 1px solid;
+	clear: both;
+}
+
+#tabs div li {
+	line-height: 1.5;
+}
+
+#tabs h1 {
+	font-size: 1.5em;
+}
+
+.textmiddle {
+	text-align: middle;
 }
 
 /* footer */
@@ -152,6 +177,15 @@ img[title=guard-dog-logo] {
 
 #footer-left ul {
 	width: 200px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#footer-left ul a {
+	color: #999;
+	text-decoration: none;
+	line-height: 1.2;
 }
 
 #footer-left ul li {
@@ -180,6 +214,8 @@ img[title=guard-dog-logo] {
 #footer-right {
 	width: 200px;
 	float: left;
+	color: #999;
+	line-height: 1.2;
 }
 
 /* navigation menu container */
@@ -261,6 +297,10 @@ img[title=guard-dog-logo] {
 
 /** home **/
 
+table.divider-table a {
+	text-decoration: none;
+}
+
 a.link_logo {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:1.25em;
@@ -311,6 +351,15 @@ a.link_logo:hover {
 	width: 230px;
 }
 
+/* span in table cell wrap text*/
+span.textboxes {
+	font-family:Arial, Helvetica, sans-serif;
+    font-size:0.875em;
+	color:#7f7f7f;
+	padding: 0 20px 0 10px;
+	line-height:1.188em;
+	display: block;	
+}
 
 #textauto {color: purple;}
 a.link_logo:hover #textauto {color: #000000;}
@@ -326,29 +375,24 @@ a.link_logo:hover #textmoto {color: #000000;}
 #textmarine {color: #00aeef;}
 a.link_logo:hover #textmarine {color: #000000;}
 
-/* span in table cell wrap text*/
-span.textboxes {
-	font-family:Arial, Helvetica, sans-serif;
-    font-size:0.875em;
-	color:#7f7f7f;
-	padding: 0 20px 0 10px;
-	line-height:1.188em;
-	display: block;	
-}
 
 .textboxes_orange {
 	color: #F15B28;
+	font-weight: bold;
 }
 
 .textboxes_purple {
 	color: #800080;
+	font-weight: bold;
 }
 
 .textboxes_green {
 	color: #75A532;
+	font-weight: bold;
 }
 
 .textboxes_blue {
 	color: #00AEEF;
+	font-weight: bold;
 }
 /** **/
