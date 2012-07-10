@@ -12,6 +12,10 @@ body {
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 #container {
 	width: 945px;
 	background-color: #fff;
@@ -158,7 +162,10 @@ img[title=guard-dog-logo] {
 }
 
 .textmiddle {
-	text-align: middle;
+	vertical-align: top;
+	line-height: 2;
+	font-weight: bold;
+	color: #A7A9AC;
 }
 
 /* footer */
