@@ -137,5 +137,4 @@ function load_scripts() {
 	wp_enqueue_script('api',get_template_directory_uri().'/scripts/api.js', array('cycle'));
 }
 
-
 ?>
