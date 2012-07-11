@@ -282,6 +282,10 @@ img[title=guard-dog-logo] {
 	position:relative;
 }
 
+.menu-primary-container ul li:hover {
+	background: #c0c0c0 url(../guarddog-theme/images/mainbk.png) repeat 0 200px;
+}
+
 .menu-primary-container ul li a {
 	color: #fff; 
 	text-decoration: none;
@@ -289,7 +293,7 @@ img[title=guard-dog-logo] {
 	font-weight: bold;
 	font-size: .9em;
 	display: block;
-	width: 95px;
+	width: 97px;
 	padding: 10px;	
 }
 

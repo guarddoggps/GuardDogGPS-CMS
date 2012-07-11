@@ -73,24 +73,6 @@ function header_post_register(){
 	register_post_type( 'header_post' , $args );	
 }
 
-add_action('init', 'home_page_posts');
-function home_page_posts(){
-	$labels = array(
-		'name' => _x('Home Page Post', 'post type general name'), 
-		'singular_name' => _x('Home Page Post', 'post type singular name'),
-		'add_new' => _x('Add New', 'header post'),
-		'add_new_item' => __('Add New Header post'),
-		'edit_item' => __('Edit Header Post'),
-		'new_item' => __('New Header Post'),
-		'view_item' => __('View Header Post'),
-		'search_items' => __('Search Header Post'),
-		'not_found' =>  __('Nothing found'),
-		'not_found_in_trash' => __('Nothing found in Trash'),
-		'parent_item_colon' => ''
-	);
-}
-
-
 //This registers menu! Makes it available in theme!
 register_nav_menus( array(  
     'primary' => __( 'Primary Navigation', 'GuardDog Theme' )
@@ -129,6 +111,10 @@ function footer_post_register(){
 	
 	register_post_type( 'footer_post' , $args );
 }
+
+//overrides the hook to show_admin_bar
+function my_function_admin_bar(){ return false; }
+add_filter( 'show_admin_bar' , 'my_function_admin_bar');
 
 add_action('wp_enqueue_scripts', 'load_scripts');
 function load_scripts() {
