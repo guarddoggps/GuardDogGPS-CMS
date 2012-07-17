@@ -2,20 +2,32 @@
 Theme Name: GuardDog Theme
 */
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+  
 /** defaults **/
 body {
 	background-color: #E7E7E7;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1em;
-	line-height: 1em;	
+  font-size:0.875em;
+  line-height:1.188em;
 	color: #7F7F7F;
 	margin: 0;
 	padding: 0;
 }
 
-a {
-	text-decoration: none;
+a:link {
+  text-decoration: none;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  color: #a7a9ac;
+  font-weight: bold;
 }
+a:visited {text-decoration: none; font-family:Arial, Helvetica, sans-serif; font-size: 1.000em; color: #a7a9ac; font-weight: bold;}
+a:active {text-decoration: none; font-family:Arial, Helvetica, sans-serif; font-size: 1.000em; color: #a7a9ac; font-weight: bold;}
+a:hover {text-decoration: none; font-family:Arial, Helvetica, sans-serif; font-size: 1.000em; color: #ff6600; font-weight: bold;}
 
 h1 {
 	font-size: 1.5em;
@@ -25,6 +37,9 @@ h1 {
 h2 {
 	font-size: 1.3em;
 	line-height: 1.2;
+  text-align: right;
+  color: #F60;
+  margin-right: 30px;
 }
 
 h3 {
@@ -33,7 +48,29 @@ h3 {
 }
 
 p {
-	line-height: 1.2;
+	/*line-height: 1.2;*/
+  display: block;
+}
+
+ul {
+  margin-left: 18px;
+}
+
+#textguard { 
+  color:#FF6600;
+}
+
+.textboxes {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:0.875em;
+  color:#7f7f7f;
+  line-height:1.188em;
+  padding-left: 10px;
+  display: block;
+  padding-top: 0px;
+  padding-right: 20px;
+  text-align: left;
+  padding-bottom: 0px;
 }
 
 .orange-color {
@@ -205,7 +242,7 @@ img[title=guard-dog-logo] {
 
 /* footer */
 
-#footer {
+/*#footer {
 	width: 945px;
 	margin-left: auto;
 	margin-right: auto;
@@ -222,21 +259,23 @@ img[title=guard-dog-logo] {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+  float: right;
 }
 
 #footer-left ul a {
 	color: #999;
 	text-decoration: none;
 	line-height: 1.2;
+  font-size: 12px;
 }
 
 #footer-left ul li {
 	float: left;
 	width: 100px;
-}
+}*/
 
 /* break list */
-#footer-left ul br {
+/*#footer-left ul br {
     clear: left;
 }
 
@@ -258,88 +297,124 @@ img[title=guard-dog-logo] {
 	float: left;
 	color: #999;
 	line-height: 1.2;
+}*/
+
+#footer .footer-inner .footer-left a {
+  font-weight: normal;
 }
 
-/* navigation menu container */
-.menu-primary-container {
-	width: 100%;
-	height: 35px;
-	background: #FF7716 url(../guarddog-theme/images/mainbk.png) repeat 0 200px;
-}
-
-.menu-primary-container ul {
-	margin: 0px;
-	padding: 0px;
-}
-
-.menu-primary-container ul li {
-	display: inline; 
-	height: 35px; 
-	float: left; 
-	list-style: none;
-	border-right: 1px solid #FF7716;
-	/* position submenu relative to main menu */
-	position:relative;
-}
-
-.menu-primary-container ul li:hover {
-	background: #c0c0c0 url(../guarddog-theme/images/mainbk.png) repeat 0 200px;
-}
-
-.menu-primary-container ul li a {
-	color: #fff; 
-	text-decoration: none;
-	text-align: center;
-	font-weight: bold;
-	font-size: .9em;
-	display: block;
-	width: 97px;
-	padding: 10px;	
-}
-
-.menu-primary-container li ul
+#footer
 {
-	margin: 0px;
-	padding: 0px;
-	/* hide submenu */	
-	display :none;
-	/* position submenu relative to main menu */
-	position:absolute;
-	/* position relative to parent */
-	left: 0px; 
-	top: 33px;
-	/* in case we have other elements positioned absolutely */
-	z-index: 100;
-	background-color: #F60;
+  width:100%;
+  height:140px;
+}
+.footer-inner
+{
+  width:935px;
+  padding-top:0px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+#footer #copyright {
+  float: left;
+  clear: left;
+  width: 100%;
+}
+.footer-left ul
+{
+  list-style-type: none;  
+}
+.footer-middle
+{
+  float:left;
+  width:550px;
+  height: 100px;
+}
+.footer-left
+{
+  float:left;
+  width:190px
+}
+.footer-right
+{
+  float:right;
+  width:190px;
+}
+.footer-sep
+{
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.footer-col1-menu
+{
+  float:right;
+  margin-right:15px;
+}
+.footer-col2-menu
+{
+  float:right;
+  margin-right:15px;
+}
+.footer-menu
+{
+  text-align: right;
+}
+.footer-menu ul li
+{
+  line-height:1.3em;
+}
+.footer-menu ul li a
+{
+  color:#999;
+  font-size:12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.menu-primary-container li:hover ul
+.footer-menu ul li a:hover
 {
-	/* show submenu */
-	display: block;
-	width: 97px;
- }
-
-.menu-primary-container li li
-{
-	list-style:none;
-	display: list-item;
-	width:100%;
+  color:#FF6600;
+  font-size:12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.menu-primary-container li li a
+.footer-para
 {
-	border: none;
-	background: #fff;
-	text-align: left;
-	color: #000;
-	font-weight: normal;
-	border-top: 1px solid #D9D9D9;
+  color:#999;
+  font-size:12px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left:15px;
 }
 
-.menu-primary-container li li a.hover
+
+.footer-para a
 {
+  color:#999;
+  font-size:12px;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style-type: none;
 }
+
+
+.footer-para1
+{
+  color:#666;
+  font-size:12px;
+  padding:5px 25px 0px 25px;
+  text-align:center;
+}
+
+.copy-write
+{
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+
+
 
 /** home **/
 
@@ -365,13 +440,13 @@ a.link_logo:hover {
 }
 
 .featuresboxes {
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:0.8em;
-	color:#7f7f7f;
-	line-height:1.438em;
-/*	vertical-align: top; */
-	padding-left: 25px;
-}
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:0.875em;
+  color:#7f7f7f;
+  line-height:1.438em;
+  vertical-align: top;
+  padding-left: 25px;
+  }
 
 /* apply border to table cells */
 .autotrac-cell {
@@ -530,6 +605,100 @@ a.gray_links {
 	background: #eceaea ;
 	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
 	color: #797268;
+}
+/* navigation menu container */
+.menu-primary-container {
+  width: 100%;
+  height: 37px;
+  background: #FF6600 url(images/mainbk.png);
+}
+
+.menu-primary-container ul#menu-primary {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-primary-container ul#menu-primary > li.menu-item {
+  display: inline;
+  height: 35px; 
+  float: left; 
+  list-style: none;
+  /* position submenu relative to main menu */
+  position: relative;
+  border: 1px solid transparent;
+  border-right: none;
+}
+
+.menu-primary-container ul#menu-primary > li.menu-item:hover > a {
+  background: #c0c0c0 url(images/mainbk.png) repeat 0 100px;
+}
+
+.menu-primary-container ul#menu-primary > li.menu-item > a {
+  color: #fff; 
+  text-decoration: none;
+  text-align: center;
+  font: bold 0.8em Arial, sans-serif;
+  display: block;
+  width: 112px;
+  background: #ff7716 url(images/mainbk.png) repeat 0 200px;
+  padding: 11px;
+  text-transform: uppercase;
+}
+
+.menu-primary-container li.menu-item ul.sub-menu
+{
+  margin: 0px;
+  /* hide submenu */  
+  display :none;
+  /* position submenu relative to main menu */
+  position:absolute;
+  /* position relative to parent */
+  left: 0px; 
+  top: 35px;
+  /* in case we have other elements positioned absolutely */
+  z-index: 100;
+  
+  padding: 0 9px;
+  background: #fff;
+  
+  border: 1px solid #D8D9DA;
+}
+
+.menu-primary-container li:hover ul.sub-menu
+{
+  /* show submenu */
+  display: block;
+  width: 112px;
+ }
+
+.menu-primary-container li li
+{
+  list-style:none;
+  display: list-item;
+  width: 100%;
+}
+
+.menu-primary-container li li a
+{
+  border: none;
+  text-align: left;
+  color: #000;
+  display: block;
+  font-weight: normal;
+  border-bottom: 1px solid #D9D9D9;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
+}
+
+.menu-primary-container li li a.hover
+{
+}
+
+.content {
+ padding-top: 30px; 
 }
 
 /** **/
