@@ -8,10 +8,8 @@ if ($redirect)
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head profile="http://gmpg.org/xfn/11">
 	<title><?php
-        if ( is_single() ) { single_post_title(); }       
-        elseif ( is_home() || is_front_page() ) { bloginfo('name'); print ' | '; bloginfo('description'); get_page_number(); }
-        elseif ( is_page() ) { single_post_title(''); }
-        elseif ( is_search() ) { bloginfo('name'); print ' | Search results for ' . wp_specialchars($s); get_page_number(); }
+        if ( is_home() || is_front_page() ) { bloginfo('name'); print ' | '; print 'Home'; }
+        else if ( is_search() ) { bloginfo('name'); print ' | Search results for ' . wp_specialchars($s); get_page_number(); }
         elseif ( is_404() ) { bloginfo('name'); print ' | Not Found'; }
         else { bloginfo('name'); wp_title('|'); get_page_number(); }
     ?></title>	
