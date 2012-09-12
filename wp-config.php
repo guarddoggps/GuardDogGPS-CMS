@@ -22,7 +22,7 @@ define('DB_NAME', 'guarddoggps_cms');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', ''); //xtremek0864
+define('DB_PASSWORD', 'xtremek0864'); //xtremek0864
 
 /** MySQL hostname */
 define('DB_HOST', '127.0.0.1');
